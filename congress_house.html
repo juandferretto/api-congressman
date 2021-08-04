@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House - Congress 113</title>
+    <!-- Estilos BootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
+    <div id="app" class="d-flex flex-column">
+      <header class="d-flex justify-content-between align-items-center">
+        <img class="ms-2 mt-2" src="img/iconoLupa.png" alt="iconoLupa" />
+        <div class="me-3">
+          <img id="iconoMail" src="img/apple-mail.png" alt="iconoMail" />
+          <a href="mailto:info@tgif.net">info@tgif.net</a>
+        </div>
+      </header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2" id="nav">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-primary"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown" id="congress">
+                <a
+                  class="nav-link dropdown-toggle bg-secondary bg-gradient"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Congress 113
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="congress_house.html">House</a></li>
+                  <li>
+                    <a class="dropdown-item" href="congress_senate.html">Senate</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown" id="congress">
+                <a
+                  class="nav-link dropdown-toggle text-primary"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Attendance
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="attendance_house.html">House</a></li>
+                  <li>
+                    <a class="dropdown-item" href="attendance_senate.html">Senate</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown" id="congress">
+                <a
+                  class="nav-link dropdown-toggle text-primary"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Loyalty
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="loyalty_house.html">House</a></li>
+                  <li>
+                    <a class="dropdown-item" href="loyalty_senate.html">Senate</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main class="d-flex flex-column" id="house">
+        <div class="ms-3 mt-3" id="congressmen">
+          <h2 class="text-decoration-underline">Congressmen</h2>
+          <p>
+            The major power of the House is to pass federal legislation that
+            affects the entire country, although its bills must also be passed
+            by the Senate and further agreed to by the U.S. President before
+            becoming law (unless both the House and Senate re-pass the
+            legislation with a two-thirds majority in each chamber). The House
+            has some exclusive powers: the power to initiate revenue bills, to
+            impeach officials (impeached officials are subsequently tried in the
+            Senate), and to elect the U.S. President in case there is no
+            majority in the Electoral College.
+          </p>
+          <p>
+            Each U.S. state is represented in the House in proportion to its
+            population as measured in the census, but every state is entitled to
+            at least one representative.
+          </p>
+        </div>
+        <div class="d-flex justify-content-center mt-5 mb-5">
+          <div class="d-flex flex-column me-4">
+            <div>
+              <h6 class="ms-2">State:</h6>
+              <select v-model="selected" name="" class="select ms-2">
+                <option v-for="state in filterState" :value="state">{{state}}</option>
+              </select>
+            </div>
+            <div class="dropdown">
+                <form class="d-flex flex-column ms-2 me-2 mt-2">
+                  <h6>Party:</h6>
+                    <label for="independent">
+                      <input v-model="partys" type="checkbox" name="filtro1" id="independent" value="ID">
+                      <span>Independents</span>
+                    </label>
+                    <label for="democrat">
+                      <input v-model="partys" type="checkbox" id="democrat" value="D">
+                      <span>Democrat</span>
+                    </label>
+                    <label for="republican">
+                      <input v-model="partys" type="checkbox" id="republican" value="R">
+                      <span>Republican</span>
+                    </label>
+                </form>
+            </div>
+        </div>
+          <div id="tablet" class="overflow-auto">
+            <table class="table table-striped tableGral table-hover text-center">
+              <thead>
+                <tr class="bg-secondary text-white">
+                  <th scope="col">Name</th>
+                  <th scope="col">Party</th>
+                  <th scope="col">State</th>
+                  <th scope="col">Years in Office</th>
+                  <th scope="col">% Vote w/ Party</th>
+                </tr>
+              </thead>
+              <tbody id="table_party">
+                <tr v-for="member in filterMembers">
+                  <td>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</td>
+                  <td>{{member.party}}</td>
+                  <td>{{member.state}}</td>
+                  <td>{{member.seniority}}</td>
+                  <td>{{member.votes_with_party_pct}}</td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+            </div>
+          </div>
+        </main>
+        <footer
+          id="foot"
+          class="d-flex justify-content-center align-items-center"
+        >
+          <span class="me-2">© 2016 TGIF</span>
+          <span class="">|</span>
+          <span class="ms-2">All Rights Reserved</span>
+        </footer>
+      </div>
+  
+      <!-- Scripts de BootStrap -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"
+      ></script>
+  
+      <!-- Scripts de house  -->
+      <script src="https://unpkg.com/vue@next"></script>
+      <script src="./script/app.js"></script>
+    </body>
+  </html>
+                  

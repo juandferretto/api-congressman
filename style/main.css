@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box !important;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  
+  main{
+   min-height: 67.6vh;
+  }
+  
+  #app {
+    width: 100% !important ;
+    min-height: 100vh;
+  }
+  
+  #iconoMail {
+    height: 4vh;
+  }
+  
+  header {
+    width: 100%;
+  }
+  
+  header img {
+    height: 10vh;
+  }
+  
+  #nav {
+    background-color: rgba(128, 128, 128, 0.382) !important;
+    border: 0.1em solid black !important;
+    width: 100%;
+  }
+  
+  #img_center img{
+    height: 35vh;
+  }
+  
+  
+  #text_image{
+    width: 95vw;
+  }
+  
+  #image{
+    border: 0.2em solid black !important;
+    border-radius: 50%;
+    margin-top: 35px !important;
+  }
+  
+  #img_center{
+    width: 80%;
+  }
+  
+  #text {
+    width: 80% !important;
+    font-size: 15px;
+  }
+  
+  #read{
+    border: none;
+    background-color: none;
+    width: 20%;
+    margin: 10px;
+  }
+  
+  #read:hover{
+    text-decoration: underline;
+    color: blue;
+  }
+  
+  #separator {
+    border-top: 0.1em solid black;
+  }
+  
+  
+  #foot {
+    background-color: rgba(128, 128, 128, 0.382) !important;
+    height: 10vh;
+    border: 0.1em solid black;
+  }
+  
+  #iconoGral {
+    width: 30%;
+  }
+  
+  #iconoMain {
+    height: 15vh;
+  }
+  
+  #tablet {
+    width: 70%;
+    height: 50vh;
+    justify-content: center;
+    border: 0.1em solid black;
+  }
+  
+  #congressmen {
+    width: 90%;
+  }
+  
+  #congressmen p {
+    font-style: oblique;
+  }
+  
+  #iconoFilter{
+    height: 3vh;
+  }
+  
+  #dropdown{
+    height: 20vh;
+    width: 10vw !important;
+  }
+  
+  #tables{
+    width: 45vw;
+    height: 40vh;
+    border: 0.1em solid black;
+  }
+  
+  #text_tables{
+    width: 40%;
+  
+  }
+  
+  #separator{
+    border-top: 0.2em solid grey;
+  }
+  
+  #text_tables{
+    font-style: oblique;
+  }
